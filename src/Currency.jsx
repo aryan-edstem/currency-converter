@@ -5,10 +5,10 @@ import { useState } from "react";
 const Currency = () => {
     const [rate, setRate] = useState()
     const [list, setList] = useState()
-    const [base,setBase]= useState(0)
+    const [result,setResult]= useState(0)
     const [formData, setFormData] = useState({
         amount: '',
-        from: '',
+        base: '',
         to: '',
       });
 
@@ -29,7 +29,7 @@ const Currency = () => {
     },[]);
 
     const handleChange = (event) => {
-        setBase(1)
+        setResult(0)
         const { name, value} = event.target;
         setFormData((prevData) => ({
           ...prevData,
@@ -39,15 +39,16 @@ const Currency = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setBase(formData.amount / rate.rates[formData.from] * rate.rates[formData.to]);
+        setResult(formData.amount / rate.rates[formData.base] * rate.rates[formData.target]);
     }
 
     if(rate){
     return(
         <div>
+            <h1>Currency Converter</h1>
             <form onSubmit={handleSubmit}>
             <label>
-          Amount
+          Amount:
           <input
             type="text"
             name="amount"
@@ -56,11 +57,12 @@ const Currency = () => {
           />
         </label>
         <br />  
+        <div className="currency">
         <label>
             From
             <select
-              name="from"
-              value={formData.from}
+              name="base"
+              value={formData.base}
               onChange={handleChange}
             >
             {list.map((item)=>{
@@ -76,8 +78,8 @@ const Currency = () => {
         <label>
             To
             <select
-              name="to"
-              value={formData.to}
+              name="target"
+              value={formData.target}
               onChange={handleChange}
             >
             {list.map((item)=>{
@@ -89,10 +91,11 @@ const Currency = () => {
 
         </label> <br />
         <br />
+        </div>
         </form>
         <button onClick={handleSubmit}>Calculate</button>
         <br/><br/>
-        <h1>{base}</h1>
+        <h1>{result}</h1>
         </div>
     )
 }
