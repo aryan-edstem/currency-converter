@@ -1,27 +1,80 @@
-.App {
+.home {
   text-align: center;
   margin-top: 40px;
+  background: radial-gradient(50% 50% at 50% 50%, #EAEAFE 0%, rgba(221, 246, 243, 0.00) 100%);
 }
 
 body{
-  background-image: linear-gradient(to right, red , yellow);
+  background: #F6F6F6;
+  padding:20px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+h1{
+  color: #1F2261;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+h3{
+  color: #808080;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.container{
+  width: fit-content;
+  background-color: white;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  height: fit-content;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.base-currency{
+  display: flex;
+  justify-content: space-between;
+  gap:20px;
+  align-items:end;
+  padding: 30px ;
 }
 
 input{
-  width: 60px;
+  width: 100px;
   margin-left: 30px;
   border-radius: 5px;
   background-color: aqua;
   border: 5px solid aqua;
+  padding:20px;
+  font-family: Roboto;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
-.currency{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 50px;
-  margin-left: 30px;
-  margin-top: 40px;
+p{
+  color: #989898;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 select{
@@ -30,12 +83,24 @@ select{
   padding: 5px;
   background-color: aqua;
   border: 5px solid aqua;
+  padding:20px;
+  font-family: Roboto;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 button{
-  margin-top: 40px;
   border: 5px solid green;
   border-radius: 10px;
   background-color: green;
   color: white;
+  margin:50px;
+  padding:20px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
